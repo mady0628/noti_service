@@ -1,0 +1,32 @@
+{
+  "name": "chat_service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "kafka:outbox": "node src/workers/start.outbox.js",
+    "kafka:result": "node src/kafka/start.result-consumer.js",
+    "reconcile": "node src/workers/start.reconciliation.js",
+    "kafka:retry": "node src/workers/start.retry.js",
+    "retry:scheduler": "node src/workers/start.retry-scheduler.js",
+    "kafka:incoming": "node src/kafka/start.incoming-consumer.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "kafkajs": "^2.2.4",
+    "multer": "^2.5.0",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
